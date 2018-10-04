@@ -55,7 +55,7 @@ end
 
 #Création d'une méthode qui trie la liste de handle par ordre alphabétique
 def alphabetic_order
-    sorted_list=$liste_journalistes.sort
+    sorted_list=$liste_journalistes.sort_by { |word| word.downcase }
 puts "Voici la liste par ordre alphabétique: #{sorted_list}"
 end
 

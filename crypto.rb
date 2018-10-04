@@ -30,18 +30,13 @@ end
 
 #Création d'une méthode qui cherche la crypto la plus basse.
 def theSmallestValue
-	counter = 0.0
-	smallestValue = Float
+	smallestValue = $my_hash.values[0]
 	crypto = String.new
 	$my_hash.each do |key, value|
-		if counter == 0.0
-			smallestValue = value
-		end
 		if value < smallestValue
  			smallestValue = value
  			crypto = key
  		end
- 	counter = 1
 	end
 	puts "La crypto ayant la plus petite valeur est #{crypto} avec pour valeur $#{smallestValue}."
 end

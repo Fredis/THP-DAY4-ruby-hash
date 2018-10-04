@@ -46,10 +46,37 @@ def theSmallestValue
 
 end
 
+def howmanycanard
+  counter = 0
+  $my_hash.each do |key, value|
+    if key.match(/[Cc][oO][iI][nN]/)
+      counter += 1
+    end
+  end
+    puts "Il y a #{counter} cryptos qui contiennent le mot \"coin\"."
+end
+
+def under_6000_n_highest
+  highest = 0
+  crypto = String.new
+  $my_hash.each do |key, value|
+    if value < 6000
+      puts "#{key}, #{value}"
+    end
+    if value > highest && value < 6000
+      highest = value
+      crypto = key
+    end
+  end
+  puts "La crypto en dessous de 6000 ayant la plus grande valeur est #{highest} avec #{$my_hash[highest]}"
+end
+
 def perform
 	merge
 	theHighestValue
 	theSmallestValue
+  howmanycanard
+  under_6000_n_highest
 end
 
 perform

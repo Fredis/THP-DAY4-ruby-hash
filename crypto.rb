@@ -41,7 +41,7 @@ def theSmallestValue
  			smallestValue = value
  			crypto = key
  		end
- 	counter += 1
+ 	counter = 1
 	end
 	puts "La crypto ayant la plus petite valeur est #{crypto} avec pour valeur $#{smallestValue}."
 end

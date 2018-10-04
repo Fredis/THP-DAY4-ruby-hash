@@ -54,7 +54,7 @@ def howmanycanard
       counter += 1
     end
   end
-		puts "Il y a #{counter} cryptos qui contiennent le mot 'coin' (sans faire attention à la casse)."
+		puts "Il y a #{counter} cryptos qui contiennent le mot 'coin' (sans faire attention à la case)."
 end
 
 #Création d'une méthode qui donne le nombre de cryptos contenant "coin" (en faisant attention à la casse).
@@ -63,7 +63,7 @@ def howmanycanard2
   $my_hash.each do |key, value|
 		counter += 1  if key.match('coin')
 	end
-		puts "Il y a #{counter} cryptos qui contiennent le mot 'coin' (en faisant attention à la casse)."
+		puts "Il y a #{counter} cryptos qui contiennent le mot 'coin' (en faisant attention à la case)."
 end
 
 #Création d'une méthode qui sort toutes les devises dont le cour est inférieur à 6000 et qui indique qui a le cour le plus haut parmi celles-là.
@@ -80,7 +80,7 @@ def under_6000_n_highest
       crypto = key
     end
   end
-  puts "La crypto en dessous de 6000 ayant la plus grande valeur est #{crypto} avec pour valeur $#{highest}"
+  puts "La crypto en dessous de $6000 ayant la plus grande valeur est #{crypto} avec pour valeur $#{highest}"
 end
 
 #Création d'une méthode "perform" qui affiche dans le terminal tous les résultats des précédentes méthodes.

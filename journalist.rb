@@ -12,7 +12,7 @@ def contains_number
     $liste_journalistes.each do |handle|
         counter += 1 if handle.match(/\d/)
     end
-puts "Dans cet array il y a #{counter} handle qui contiennent un numéro."
+puts "Dans cet array il y a #{counter} handles qui contiennent un numéro."
 end 
 
 #Création d'une méthode qui dit combien d'handle contiennent les 4 lettres du prénom "Aude" à la suite (sans faire attention à la casse)
@@ -21,7 +21,7 @@ def contains_aude
     $liste_journalistes.each do |handle|
         counter += 1 if handle.match(/[aA][uU][dD][eE]/)
     end
-puts "Dans cet array il y a #{counter} handle qui contiennent les 4 lettres du prénom 'Aude' à la suite (sans faire attention à la casse)"
+puts "Dans cet array il y a #{counter} handles qui contiennent les 4 lettres du prénom 'Aude' à la suite (sans faire attention à la case)"
 end
 
 #Création d'une méthode qui dit combien de handle commencent par une majuscule ?
@@ -30,7 +30,7 @@ def begin_with_uppercase
     $liste_journalistes.each do |handle|
         counter += 1 if handle[1].match(/[A-Z]/)
     end
-puts "Dans cet array il y a #{counter} handle qui commencent par une majuscule."
+puts "Dans cet array il y a #{counter} handles qui commencent par une majuscule."
 end
 
 #Création d'une méthode qui dit combien de handle contiennent une majuscule.
@@ -39,7 +39,7 @@ def have_uppercase
     $liste_journalistes.each do |handle|
         counter += 1 if handle.match(/[A-Z]/)
     end
-puts "Dans cet array, il y a #{counter} handle qui contiennent une majuscule."    
+puts "Dans cet array, il y a #{counter} handles qui contiennent une majuscule."    
 end 
 
 #Création d'une méthode qui compte combien il y a de _ dans tous les pseudos confondus ?
@@ -50,7 +50,7 @@ def number_of_underscore
         counter +=1 if character.match(/_/)
         end
     end
-puts "Il y a #{counter} underscore dans tous les pseudos confondus."
+puts "Il y a #{counter} underscores dans tous les pseudos confondus."
 end
 
 #Création d'une méthode qui trie la liste de handle par ordre alphabétique

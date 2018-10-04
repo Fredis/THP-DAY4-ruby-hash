@@ -4,12 +4,14 @@ $cryptoValue = ["$6558.07", "$468.95", "$0.487526", "$762.84", "$8.86", "$85.26"
 def merge
 	counter = 0
 	$my_hash = {}
-
-
 	while counter < $cryptoList.size
 		$my_hash.store($cryptoList[counter].to_sym,$cryptoValue[counter])
 		counter += 1
 	end
+
+  $my_hash.each do |key, value|
+    $my_hash[key] = value.delete!('$').to_f
+  end
 end
 
 def theHighestValue
@@ -17,24 +19,20 @@ def theHighestValue
 	highestValue = 0.0
 	crypto = String.new
 	$my_hash.each do |key, value|
-		value = value.delete!('$').to_f
  		if value > highestValue
  			highestValue = value
  			crypto = key
  		end
 	end
-	puts "high : #{highestValue}"
-	puts "La crypto ayant la plus grande valeur est #{crypto}."
-
+	puts "La crypto ayant la plus grande valeur est #{crypto} avec $#{highestValue}."
 end
 
 def theSmallestValue
-	
+
 	counter = 0.0
 	smallestValue = Float
 	crypto = String.new
 	$my_hash.each do |key, value|
-		value = value.delete!('$').to_f
 		if counter == 0.0
 			smallestValue = value
 		end
@@ -44,14 +42,13 @@ def theSmallestValue
  		end
  	counter += 1
 	end
-	puts "small : #{smallestValue}"
-	puts "La crypto ayant la plus petite valeur est #{crypto}."
+	puts "La crypto ayant la plus petite valeur est #{crypto} avec $#{smallestValue}."
 
 end
 
 def perform
 	merge
-	#theHighestValue
+	theHighestValue
 	theSmallestValue
 end
 
